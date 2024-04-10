@@ -33,9 +33,10 @@ for _ in range(3):
         item_price = float(item_price_str)
     except ValueError:
         easygui.msgbox("Must be an integer", title="Error Message")
-        item_price_str = easygui.enterbox("Enter item price:",
+        item_price_str = easygui.enterbox("Please enter a price:",
                                           title="Item Price")
-        break
+        item_price = float(item_price_str)
+
     combo_items[item_name] = item_price
 
 # Moving the new dictionary within the Combo meals dictionary
