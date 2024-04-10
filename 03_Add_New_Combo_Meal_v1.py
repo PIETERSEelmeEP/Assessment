@@ -1,4 +1,4 @@
-"""Add a combo meal to the menu
+"""Add a new combo meal to the menu
 """
 
 Combo_meals = {
