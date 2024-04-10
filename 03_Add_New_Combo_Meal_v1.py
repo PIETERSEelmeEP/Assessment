@@ -1,5 +1,6 @@
 """Add a new combo meal to the menu
 """
+import easygui
 
 Combo_meals = {
     "Value": {
@@ -32,3 +33,4 @@ Combo_meals[combo_name] = combo_items
 
 # printing the new list
 print(Combo_meals)
+
