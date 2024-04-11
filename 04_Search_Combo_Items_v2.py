@@ -1,15 +1,6 @@
-"""Search for combo names within the menu dictionary
+"""Improving 04_Search_Combo_Items_v1 and allowing for the user to not only
+search for a combo name but for an item
 """
-
-
-# Print the Combo menu with format function
-def print_combo_menu():
-    for combo_name, items_prices in Combo_meals.items():
-        print(f"\nCombo Name: {combo_name}\nItems & Prices:")
-
-        for key in items_prices:
-            print(f"{key}: {items_prices[key]}")
-
 
 # Menu dictionary
 Combo_meals = {
@@ -32,21 +23,28 @@ Combo_meals = {
 
 
 # Main Routine
-def search_combo(combo_name):
-    for combo, items in Combo_meals.items():
-        if combo_name.lower() == combo.lower():
-            return items
-    return None
+combo_search = input("Enter the name of the combo you are searching for: ")
+found = False
 
-combo_name = input("Enter the name of the combo: ")
-combo_items = search_combo(combo_name)
+# Searching for the Combo
+for combo, combo_items in Combo_meals.items():
+    if combo_search.lower() == combo.lower():
+        print("\nResults:")
+        print(f"Combo Name: {combo}")
+        print("Items & Prices:")
+        for item, price in combo_items.items():
+            print(f"{item}: ${price:.2f}")
+        found = True
+    else:
+        for item in combo_items:
+            if combo_search.lower() == item.lower():
+                print("\nResults:")
+                print(f"Combo Name: {combo_search}")
+                print("Items & Prices:")
+                for item_, price in combo_items.items():
+                    print(f"{item_}: ${price:.2f}")
+                found = True
 
-if combo_items:
-    print(f"The combo '{combo_name}' includes the following items:")
-    for item, price in combo_items.items():
-        print(f"{item}: ${price:.2f}")
-else:
-    print(f"Combo '{combo_name}' not found.")
-
-# printing the new list
-print_combo_menu()
+if not found:
+    print(f"There are no Combos named {combo_search}\nNor are there any items "
+          f"within Combos named {combo_search}")
