@@ -1,4 +1,4 @@
-"""Improve 03_Add_New_Combo_Meal_v1 by using easygui
+"""Improve 03_Add_New_Combo_Meal_v2 by formatting the printed results
 """
 import easygui
 
