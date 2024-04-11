@@ -1,16 +1,6 @@
 """Search for combo names within the menu dictionary
 """
 
-
-# Print the Combo menu with format function
-def print_combo_menu():
-    for combo_name, items_prices in Combo_meals.items():
-        print(f"\nCombo Name: {combo_name}\nItems & Prices:")
-
-        for key in items_prices:
-            print(f"{key}: {items_prices[key]}")
-
-
 # Menu dictionary
 Combo_meals = {
     "Value": {
@@ -34,6 +24,7 @@ Combo_meals = {
 # Main Routine
 combo_search = input("Enter the name of the combo you are searching for: ")
 
+# Searching for the Combo
 found = False
 for combo, items in Combo_meals.items():
     if combo_search.lower() == combo.lower():
@@ -46,5 +37,4 @@ for combo, items in Combo_meals.items():
         break
 
 if not found:
-    print(f"There are no Combos named {combo_search}\nNor are there any items "
-          f"within Combos named {combo_search}")
+    print(f"There are no Combos named {combo_search}")
