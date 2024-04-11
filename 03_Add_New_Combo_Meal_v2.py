@@ -2,6 +2,16 @@
 """
 import easygui
 
+
+# Print the Combo menu with format function
+def print_combo_menu():
+    for combo_name, items_prices in Combo_meals.items():
+        print(f"\nCombo Name: {combo_name}\nItems & Prices:")
+
+        for key in items_prices:
+            print(f"{key}: {items_prices[key]}")
+
+
 Combo_meals = {
     "Value": {
         "Beef Burger": 5.69,
@@ -20,6 +30,7 @@ Combo_meals = {
     }
 }
 
+# Main Routine
 # Create a dictionary for the new combo
 combo_name = easygui.enterbox("Enter the name of the new combo meal",
                               title="Combo Name")
@@ -43,4 +54,4 @@ for _ in range(3):
 Combo_meals[combo_name] = combo_items
 
 # printing the new list
-print(Combo_meals)
+print_combo_menu()
