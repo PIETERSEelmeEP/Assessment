@@ -24,12 +24,12 @@ Combo_meals = {
 
 # Asking the user if they are sure they want to delete the combo
 def delete_verification(combo_delete, combo_items_):
-    delete_it = f"Combo Name: {combo_delete}"
-    delete_it += "Items & Prices:"
+    delete_it = f"\nCombo Name: {combo_delete}"
+    delete_it += "\nItems & Prices:"
     for item, price in combo_items_.items():
-        delete_it += f"{item}: ${price:.2f}"
-    delete = easygui.buttonbox("Are you sure you want to delete this combo? "
-                               "(yes/no)", title="Delete Verification",
+        delete_it += f"\n{item}: ${price:.2f}"
+    delete = easygui.buttonbox(f"Do you want to delete:(yes/no)\n{delete_it}",
+                               title="Delete Verification",
                                choices=["Yes", "No"])
     if delete == "Yes":
         # Delete combo
