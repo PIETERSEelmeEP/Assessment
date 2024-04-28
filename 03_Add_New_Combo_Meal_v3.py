@@ -3,6 +3,7 @@
 import easygui
 
 
+# Add Combo function
 def add_combo():
     # Create a dictionary for the new combo
     combo_name = easygui.enterbox("Enter the name of the new combo meal",
