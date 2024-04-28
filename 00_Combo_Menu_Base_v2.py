@@ -1,7 +1,7 @@
 """Combined 00_Combo_Menu_Base_v1, 03_Add_New_Combo_Meal_v3,
 04_Search_Combo_Items_4 and 05_Delete_Combo_Meal_v2 into a single program.
 I also placed it in a loop so the program repeats until user chooses to exit
-program
+program.
 """
 import easygui
 
